@@ -1,0 +1,127 @@
+server:
+  port: 81
+
+# redis配置，以下有默认配置的也可以使用默认配置
+spring:
+  application:
+#    name: kafka-producer
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: kafka2
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+#  kafka:
+#    bootstrap-servers: localhost:9092
+#    producer:
+#      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      retries: 0
+#      batch-size: 16384
+#      buffer-memory: 33554432
+#    consumer:
+#      group-id: test-consumer-group
+#      auto-offset-reset: earliest
+#      enable-auto-commit: true
+#      auto-commit-interval: 100
+#      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+  datasource:
+    primary:
+      name: my-springboot
+      jdbc-url: jdbc:mysql://192.168.20.234:3306/my-springboot?useUnicode=true&characterEncoding=utf8
+      username: root
+      password: 123456
+      driver-class-name: com.mysql.jdbc.Driver
+      type: com.alibaba.druid.pool.DruidDataSource
+      filters: stat
+      maxActive: 20
+      initialSize: 1
+      maxWait: 60000
+      minIdle: 1
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: select 'x'
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      poolPreparedStatements: true
+      maxOpenPreparedStatements: 20
+
+    secondary:
+      name: second-springboot
+      jdbc-url: jdbc:mysql://192.168.20.234:3306/boot?useUnicode=true&characterEncoding=utf8
+      username: root
+      password: 123456
+      driver-class-name: com.mysql.jdbc.Driver
+      type: com.alibaba.druid.pool.DruidDataSource
+      filters: stat
+      maxActive: 20
+      initialSize: 1
+      maxWait: 60000
+      minIdle: 1
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: select 'x'
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      poolPreparedStatements: true
+      maxOpenPreparedStatements: 20
+
+#  # elasticSearch
+#  data:
+#    elasticsearch:
+#      cluster-name: elasticsearch
+#      cluster-nodes: 127.0.0.1:9300
+#      repositories:
+#        enabled: true
+  data:
+    elasticsearch:
+      cluster-nodes: 127.0.0.1:9300
+      cluster-name: elasticsearch
+      repositories:
+        enabled: true
+      properties:
+        path:
+          logs: ./elasticsearch/log
+          data: ./elasticsearch/data
+        transport:
+          tcp :
+            connect_timeout: 120s
+
+
+
+    # 使用druid数据源
+
+  cache:
+    type: redis
+#  redis:
+#    database : 6
+#    host: 192.168.20.173
+#    port: 6379
+#    password: Sicmed123
+#    pool:
+#      max-active: 8
+#      max-wait: 1
+#      max-idle: 8
+#      min-idle: 0
+#    timeout: 1000
+
+mybatis:
+  mapper-locations: classpath*:mapping/*.xml
+  type-aliases-package: com.winter.model
+#pagehelper分页插件
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
+
+#  openfire
+openfire:
+  server: 127.0.0.1
