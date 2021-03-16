@@ -1,6 +1,7 @@
 package com.algorithm;
 
 /**
+ * 冒泡排序
  * @Author: xue0601
  * @Date: 2019/3/22 10:42
  */
@@ -21,7 +22,5 @@ public class BubbleSort {
         for (int i = 0; i <a.length ; i++) {
             System.out.println(a[i]);
         }
-
     }
-
 }

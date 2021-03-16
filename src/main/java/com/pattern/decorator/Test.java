@@ -1,6 +1,7 @@
 package com.pattern.decorator;
 
 /**
+ * 装饰者模式
  * @Author: xue0601
  * @Date: 2019/3/18 9:56
  */

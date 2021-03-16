@@ -1,6 +1,7 @@
 package com.pattern.observer;
 
 /**
+ * 观察者模式
  * @Author: xue0601
  * @Date: 2019/4/9 10:00
  */

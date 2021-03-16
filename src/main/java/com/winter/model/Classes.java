@@ -3,6 +3,7 @@ package com.winter.model;
 import java.io.Serializable;
 
 public class Classes implements Serializable {
+    private static final long serialVersionUID = 8749671529001605667L;
     private Integer id;
 
     private String className;

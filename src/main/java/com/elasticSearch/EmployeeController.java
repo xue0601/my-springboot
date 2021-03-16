@@ -1,9 +1,7 @@
 package com.elasticSearch;
 
 import lombok.extern.slf4j.Slf4j;
-import org.elasticsearch.index.query.QueryBuilders;
 import org.elasticsearch.index.query.QueryStringQueryBuilder;
-import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -18,7 +16,6 @@ import java.util.Iterator;
 import java.util.List;
 
 import static org.elasticsearch.index.query.QueryBuilders.matchQuery;
-import static org.elasticsearch.index.query.QueryBuilders.queryStringQuery;
 
 /**
  * @program: my-springboot
@@ -100,8 +97,6 @@ public class EmployeeController {
         }
         return employeePage;
     }
-
-
 
     @GetMapping("/templay")
     public List<Employee> test(){

@@ -7,6 +7,14 @@ package com.algorithm;
  */
 public class InsertSort {
 
+    public static void main(String[] args) {
+        int[] a = {23, 113, 55, 29, 173, 11, 65};
+        insertSort(a, a.length);
+        for (int i = 0; i < a.length; i++) {
+            System.out.println(a[i]);
+        }
+    }
+
     public static void insertSort(int[] a, int b) {
         int x, y, z;
         for (x = 1; x < b; x++) {
@@ -25,13 +33,4 @@ public class InsertSort {
         }
 
     }
-
-    public static void main(String[] args) {
-        int[] a = {23, 113, 55, 29, 173, 11, 65};
-        insertSort(a, a.length);
-        for (int i = 0; i < a.length; i++) {
-            System.out.println(a[i]);
-        }
-    }
-
 }

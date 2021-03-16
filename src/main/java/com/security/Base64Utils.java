@@ -1,7 +1,7 @@
 package com.security;
 
-import com.sun.org.apache.xml.internal.security.exceptions.Base64DecodingException;
-import com.sun.org.apache.xml.internal.security.utils.Base64;
+//import com.sun.org.apache.xml.internal.security.exceptions.Base64DecodingException;
+//import com.sun.org.apache.xml.internal.security.utils.Base64;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -44,12 +44,13 @@ public class Base64Utils {
 	 * @throws Exception
 	 */
 	public static byte[] decode(String base64) throws Exception {
-		return Base64.decode(base64.getBytes());
+		return null;
+//		return Base64.decode(base64.getBytes());
 	}
 
-	public static String decode(byte[] b) throws Base64DecodingException {
-		return new String(Base64.decode(b));
-	}
+//	public static String decode(byte[] b) throws Base64DecodingException {
+//		return new String(Base64.decode(b));
+//	}
 
 	/** */
 	/**
@@ -62,7 +63,8 @@ public class Base64Utils {
 	 * @throws Exception
 	 */
 	public static String encode(byte[] bytes) throws Exception {
-		return new String(Base64.encode(bytes));
+		return null;
+//		return new String(Base64.encode(bytes));
 	}
 
 	/** */
